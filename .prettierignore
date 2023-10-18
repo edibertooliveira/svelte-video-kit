@@ -1,0 +1,13 @@
+node_modules
+bare.css
+CHANGELOG.md
+package-lock.json
+dist
+.svelte-kit
+/.github
+/lerna.json
+/packages/site/build
+/packages/site/static/smui.css
+/packages/site/static/smui-dark.css
+/packages/site/static/site.css
+/packages/site/static/site-dark.css

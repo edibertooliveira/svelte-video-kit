@@ -1,0 +1,58 @@
+{
+  "name": "svelte-video-kit",
+  "version": "1.0.0-alpha.5",
+  "author": "Ediberto BO <edibertooliveira@aol.com>",
+  "contributors": [
+    "Ediberto BO <edibertooliveira@aol.com>",
+    "Meigo Kukk meigo@animal.ee"
+  ],
+  "description": "A powerful video playback tool that can be customized to perfectly fit modern, stylish, and even older apps.",
+  "homepage": "https://github.com/edibertooliveira/svelte-video-kit",
+  "license": "MIT",
+  "type": "module",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "svelte": "dist/index.js",
+  "types": "src/index.d.ts",
+  "bugs": {
+    "url": "https://github.com/edibertooliveira/svelte-video-kit/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edibertooliveira/svelte-video-kit.git"
+  },
+  "keywords": [
+    "svelte",
+    "svelte4",
+    "svelte5",
+    "material-design",
+    "material",
+    "svelte-components",
+    "sveltejs"
+  ],
+  "scripts": {
+    "build": "npm run build:js && npm run build:svelte",
+    "build:js": "tsc -p . --outDir dist/ --rootDir src/",
+    "build:svelte": "svelte-strip strip src/ dist",
+    "clean": "git status --ignored -u --porcelain . | grep -v node_modules/ | grep -e '^!! ' | sed 's/^!! packages\\/[a-z-]*\\///g' | tr '\\n' ' ' | xargs rm",
+    "check": "npx svelte-check --ignore dist",
+    "prepublish": "npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "just-debounce-it": "^3.2.0",
+    "just-throttle": "^4.2.0",
+    "screenfull": "^6.0.2",
+    "svelte2tsx": "^0.6.21"
+  },
+  "devDependencies": {
+    "@tsconfig/svelte": "^5.0.2",
+    "svelte-check": "^3.5.1",
+    "svelte-strip": "^3.0.1",
+    "tslib": "^2.6.2",
+    "typescript": "^5.2.2"
+  }
+}

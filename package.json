@@ -1,0 +1,56 @@
+{
+  "name": "svelte-video-kit-dev",
+  "version": "dev",
+  "author": "Ediberto BO <edibertooliveira@aol.com>",
+  "contributors": [
+    "Ediberto BO <edibertooliveira@aol.com>"
+  ],
+  "description": "A powerful video playback tool that can be customized to perfectly fit modern, stylish, and even older apps.",
+  "homepage": "https://github.com/edibertooliveira/svelte-video-kit",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/edibertooliveira/svelte-video-kit/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edibertooliveira/svelte-video-kit.git"
+  },
+  "keywords": [
+    "svelte",
+    "svelte4",
+    "svelte5",
+    "material-design",
+    "material",
+    "svelte-components",
+    "sveltejs"
+  ],
+  "scripts": {
+    "bootstrap": "lerna bootstrap --hoist --nohoist \"@tsconfig/svelte\"",
+    "check": "lerna run check",
+    "clean": "lerna run clean",
+    "build": "lerna run build",
+    "lint": "prettier --check --plugin-search-dir=. .",
+    "format": "prettier --write --plugin-search-dir=. .",
+    "pages": "npm run build && npm run pages:build && npm run pages:push",
+    "pages:build": "cd packages/site && npm run build && cd ../..",
+    "pages:push": "git add -f packages/site/build && git commit -m 'chore: update built files' && git push origin $(git subtree split --prefix packages/site/build master):refs/heads/gh-pages --force && git reset --hard HEAD^",
+    "prepare": "husky install",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "lint-staged": {
+    "*": "prettier --check --plugin-search-dir=."
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "@commitlint/cli": "^17.7.1",
+    "@commitlint/config-conventional": "^17.7.0",
+    "husky": "^8.0.3",
+    "lerna": "^7.2.0",
+    "lint-staged": "^14.0.1",
+    "prettier": "^2.8.8",
+    "prettier-plugin-svelte": "^2.10.1",
+    "svelte": "^4.2.0"
+  }
+}
